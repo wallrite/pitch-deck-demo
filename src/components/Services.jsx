@@ -19,6 +19,7 @@ export default function Services() {
       />
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <h2 className="section-title">{tx.title}</h2>
+        {tx.subtitle && <p className="section-sub">{tx.subtitle}</p>}
         <div className={styles.grid}>
           {tx.items.map(s => (
             <div key={s.tag} className={`card ${styles.card}`}>

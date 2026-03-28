@@ -23,22 +23,35 @@ export const t = {
       btnSecondary: "Зв'язатись",
     },
     services: {
-      title: 'Формати співпраці зі мною',
+      title: 'Менеджер зростання для малого бізнесу',
+      subtitle: 'Один партнер. Три результати, що мають значення.',
       items: [
         {
-          tag: 'Business development',
-          items: ['Масштабування', 'Налаштування операційки', 'Просування'],
+          tag: 'Більше клієнтів',
+          items: [
+            'Реклама, яка приводить нових клієнтів щотижня',
+            'Воронка продажів, яка працює поки ви спите',
+            'Не залежите від «сарафанного радіо»',
+          ],
           icon: '📈',
         },
         {
-          tag: 'Маркетинг',
-          items: ['Запуск таргетованої реклами', 'Лендінг під ключ', 'Автоворонки'],
-          icon: '🎯',
+          tag: 'Більше часу',
+          items: [
+            'Системи, завдяки яким бізнес працює без вас',
+            'Чіткі процеси, яким команда може слідувати',
+            'Працюєте над бізнесом, а не в ньому',
+          ],
+          icon: '⚙️',
         },
         {
-          tag: 'Запуск навчальних курсів',
-          items: ['Розпаковка експертності', 'Створення продуктової лінійки', 'Запуск курсу під ключ'],
-          icon: '🚀',
+          tag: 'Більше доходу',
+          items: [
+            'Перетворю ваші знання на онлайн-курс',
+            'Автоматична оплата та доставка продукту',
+            'Нове джерело доходу, яке масштабується',
+          ],
+          icon: '💰',
         },
       ],
     },
@@ -362,22 +375,35 @@ export const t = {
       btnSecondary: 'Get in touch',
     },
     services: {
-      title: 'Ways to Work Together',
+      title: 'Growth Manager for Small Business',
+      subtitle: 'One partner. Three results that matter.',
       items: [
         {
-          tag: 'Business Development',
-          items: ['Scaling', 'Operational setup', 'Promotion'],
+          tag: 'More Clients',
+          items: [
+            'Ads that bring in new customers every week',
+            'A sales funnel that works while you sleep',
+            'Stop depending on word-of-mouth alone',
+          ],
           icon: '📈',
         },
         {
-          tag: 'Marketing',
-          items: ['Launching targeted ads', 'Turnkey landing page', 'Sales funnels'],
-          icon: '🎯',
+          tag: 'More Time',
+          items: [
+            'Business systems so it runs without you',
+            'Clear processes your team can follow',
+            'Work on the business, not in it',
+          ],
+          icon: '⚙️',
         },
         {
-          tag: 'Launching Online Courses',
-          items: ['Expertise unpacking', 'Product line creation', 'Turnkey course launch'],
-          icon: '🚀',
+          tag: 'More Revenue',
+          items: [
+            'Turn your knowledge into an online course',
+            'Automated payments and product delivery',
+            'A new income stream that scales',
+          ],
+          icon: '💰',
         },
       ],
     },

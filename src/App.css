@@ -19,6 +19,14 @@
   letter-spacing: -0.02em;
 }
 
+.section-sub {
+  text-align: center;
+  color: var(--text-2);
+  font-size: 1.05rem;
+  margin-top: -40px;
+  margin-bottom: 48px;
+}
+
 .tag {
   display: inline-flex;
   align-items: center;
