@@ -25,7 +25,7 @@ export default function Services() {
         className="blob"
         style={{
           width: 450, height: 450,
-          background: 'rgba(99,102,241,0.14)',
+          background: 'var(--blob-1)',
           top: '50%', right: -180,
           transform: 'translateY(-50%)',
         }}

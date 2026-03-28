@@ -16,7 +16,7 @@
 }
 
 .sub {
-  color: rgba(255,255,255,0.5);
+  color: var(--text-3);
   font-size: 1rem;
   margin-top: -10px;
 }
@@ -32,8 +32,8 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 16px 20px;
   text-decoration: none;
@@ -68,7 +68,7 @@
 
 .label {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.4);
+  color: var(--text-4);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -76,7 +76,7 @@
 
 .value {
   font-size: 0.95rem;
-  color: white;
+  color: var(--text);
   font-weight: 500;
 }
 
@@ -104,13 +104,13 @@
 .footer {
   margin-top: 80px;
   padding: 24px 0;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--border-sub);
   text-align: center;
 }
 
 .footer p {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.25);
+  color: var(--text-4);
 }
 
 @media (max-width: 560px) {

@@ -121,7 +121,7 @@ export default function Cases() {
         className="blob"
         style={{
           width: 400, height: 400,
-          background: 'rgba(99,102,241,0.12)',
+          background: 'var(--blob-1)',
           bottom: 0, right: -100,
         }}
       />

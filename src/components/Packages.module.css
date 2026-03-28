@@ -1,9 +1,10 @@
 .tableWrap {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 48px;
+  box-shadow: var(--card-shadow);
 }
 
 .table {
@@ -14,16 +15,16 @@
 .table th, .table td {
   padding: 16px 20px;
   text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--border-sub);
 }
 
-.table th { background: rgba(255,255,255,0.02); }
+.table th { background: var(--surface-2); }
 
 .table tr:last-child td { border-bottom: none; }
 
 .rowLabel {
   text-align: left !important;
-  color: rgba(255,255,255,0.75);
+  color: var(--text-2);
   font-size: 0.95rem;
 }
 
@@ -37,7 +38,7 @@
 .pkgName {
   font-weight: 700;
   font-size: 1rem;
-  color: white;
+  color: var(--text);
 }
 
 .highlight .pkgName { color: var(--accent); }
@@ -80,14 +81,14 @@
 }
 
 .no {
-  background: rgba(255,255,255,0.05);
-  color: rgba(255,255,255,0.2);
+  background: var(--surface-2);
+  color: var(--text-4);
 }
 
 .chooseNote {
   padding: 12px 20px;
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.4);
+  color: var(--text-3);
   text-align: left;
 }
 
@@ -126,7 +127,7 @@
 }
 
 .pkgDesc {
-  color: rgba(255,255,255,0.6);
+  color: var(--text-2);
   font-size: 0.875rem;
   line-height: 1.65;
 }

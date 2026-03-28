@@ -7,7 +7,7 @@ export default function Hero() {
         className="blob"
         style={{
           width: 500, height: 500,
-          background: 'rgba(99,102,241,0.2)',
+          background: 'var(--blob-1)',
           top: -120, left: -120,
         }}
       />
@@ -15,7 +15,7 @@ export default function Hero() {
         className="blob"
         style={{
           width: 300, height: 300,
-          background: 'rgba(59,130,246,0.12)',
+          background: 'var(--blob-2)',
           top: 250, right: -60,
         }}
       />

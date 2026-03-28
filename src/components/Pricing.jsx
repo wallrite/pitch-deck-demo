@@ -62,7 +62,7 @@ export default function Pricing() {
         className="blob"
         style={{
           width: 450, height: 450,
-          background: 'rgba(99,102,241,0.13)',
+          background: 'var(--blob-1)',
           top: 0, left: -150,
         }}
       />

@@ -9,9 +9,10 @@
 }
 
 .scrolled {
-  background: rgba(18,18,42,0.95);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+  background: var(--nav-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 var(--border);
 }
 
 .inner {
@@ -21,14 +22,16 @@
   align-items: center;
   justify-content: space-between;
   height: 68px;
+  gap: 16px;
 }
 
 .logo {
   font-weight: 700;
   font-size: 1rem;
-  color: white;
+  color: var(--text);
   text-decoration: none;
   letter-spacing: -0.01em;
+  flex-shrink: 0;
 }
 
 .links {
@@ -39,17 +42,17 @@
 }
 
 .links a {
-  color: rgba(255,255,255,0.7);
+  color: var(--text-2);
   font-size: 0.9rem;
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.links a:hover { color: white; }
+.links a:hover { color: var(--text); }
 
 .ctaBtn {
   background: linear-gradient(135deg, var(--accent-dark), var(--accent)) !important;
-  color: #ffffff !important;
+  color: var(--accent-text) !important;
   padding: 8px 20px;
   border-radius: 6px;
   font-weight: 600;
@@ -58,6 +61,12 @@
 }
 
 .ctaBtn:hover { opacity: 0.85; }
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
 .burger {
   display: none;
@@ -73,8 +82,9 @@
   display: block;
   width: 22px;
   height: 2px;
-  background: white;
+  background: var(--text);
   border-radius: 2px;
+  transition: background 0.25s;
 }
 
 @media (max-width: 768px) {
@@ -86,11 +96,13 @@
     top: 68px;
     left: 0;
     right: 0;
-    background: rgba(18,18,42,0.98);
+    background: var(--nav-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     flex-direction: column;
     gap: 0;
     padding: 16px 24px 24px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid var(--border);
   }
 
   .links.open { display: flex; }
@@ -101,7 +113,7 @@
     display: block;
     padding: 12px 0;
     font-size: 1rem !important;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid var(--border-sub);
   }
 
   .links li:last-child a { border-bottom: none; }
@@ -111,6 +123,5 @@
     margin-top: 8px;
     padding: 10px 24px !important;
     text-align: center;
-    border-radius: 24px;
   }
 }

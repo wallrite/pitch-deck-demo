@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   gap: 0;
-  background: rgba(255,255,255,0.04);
+  background: var(--surface-2);
   border-radius: 12px;
   overflow: hidden;
   margin-top: auto;
@@ -66,13 +66,13 @@
 .priceDivider {
   width: 1px;
   height: 40px;
-  background: rgba(255,255,255,0.08);
+  background: var(--border);
 }
 
 .priceVal {
   font-size: 1.5rem;
   font-weight: 700;
-  color: white;
+  color: var(--text);
   letter-spacing: -0.02em;
 }
 
@@ -80,7 +80,7 @@
 
 .priceLabel {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.4);
+  color: var(--text-4);
   text-transform: lowercase;
 }
 
@@ -95,7 +95,7 @@
 .formatNote {
   text-align: center;
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.35);
+  color: var(--text-4);
   margin-bottom: 56px;
 }
 
@@ -121,14 +121,14 @@
 }
 
 .addonName {
-  color: rgba(255,255,255,0.75);
+  color: var(--text-2);
   font-size: 0.9rem;
 }
 
 .addonPrice {
   font-weight: 700;
   font-size: 1rem;
-  color: white;
+  color: var(--text);
 }
 
 .urgentCard {
@@ -153,9 +153,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--border-sub);
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-2);
 }
 
 .urgentItem:last-child { border-bottom: none; }

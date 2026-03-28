@@ -67,12 +67,12 @@ const details = [
 
 export default function ServiceDetails() {
   return (
-    <section className="section" style={{ background: 'rgba(255,255,255,0.015)' }}>
+    <section className="section" style={{ background: 'var(--section-alt)' }}>
       <div
         className="blob"
         style={{
           width: 350, height: 350,
-          background: 'rgba(59,130,246,0.1)',
+          background: 'var(--blob-2)',
           top: '30%', right: -100,
         }}
       />

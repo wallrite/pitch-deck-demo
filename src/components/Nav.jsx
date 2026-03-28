@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import styles from './Nav.module.css'
+import ThemeToggle from './ThemeToggle'
 
 const links = [
   { href: '#services', label: 'Послуги' },
@@ -35,13 +36,16 @@ export default function Nav() {
             </a>
           </li>
         </ul>
-        <button
-          className={styles.burger}
-          onClick={() => setOpen(o => !o)}
-          aria-label="Toggle menu"
-        >
-          <span /><span /><span />
-        </button>
+        <div className={styles.navRight}>
+          <ThemeToggle />
+          <button
+            className={styles.burger}
+            onClick={() => setOpen(o => !o)}
+            aria-label="Toggle menu"
+          >
+            <span /><span /><span />
+          </button>
+        </div>
       </div>
     </nav>
   )
