@@ -1,0 +1,146 @@
+.tableWrap {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 48px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 16px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.table th { background: rgba(255,255,255,0.02); }
+
+.table tr:last-child td { border-bottom: none; }
+
+.rowLabel {
+  text-align: left !important;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.95rem;
+}
+
+.pkgHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.pkgName {
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+}
+
+.highlight .pkgName { color: var(--pink); }
+
+.highlightCell {
+  background: rgba(244,167,185,0.04);
+}
+
+.badge {
+  display: inline-block;
+  background: var(--pink);
+  color: #4a1020;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.yes {
+  background: rgba(244,167,185,0.2);
+  color: var(--pink);
+}
+
+.choose {
+  background: rgba(244,167,185,0.1);
+  color: rgba(244,167,185,0.6);
+  border: 1px dashed rgba(244,167,185,0.4);
+}
+
+.no {
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.2);
+}
+
+.chooseNote {
+  padding: 12px 20px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  text-align: left;
+}
+
+/* Cards below table */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.pkgCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pkgHighlight {
+  background: rgba(244,167,185,0.06);
+  border-color: rgba(244,167,185,0.25);
+}
+
+.pkgCardHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tag2 {
+  display: inline-block;
+  background: var(--pink);
+  color: #4a1020;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 4px 14px;
+  border-radius: 18px;
+}
+
+.pkgDesc {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.optTag {
+  color: rgba(244,167,185,0.7);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .tableWrap { display: none; }
+  .cards { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 901px) {
+  .cards { display: none; }
+}
