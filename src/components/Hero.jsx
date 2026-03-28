@@ -1,6 +1,11 @@
 import styles from './Hero.module.css'
+import { useLang } from '../LangContext'
+import { t } from '../i18n'
 
 export default function Hero() {
+  const { lang } = useLang()
+  const tx = t[lang].hero
+
   return (
     <section id="top" className={styles.hero}>
       <div
@@ -21,18 +26,14 @@ export default function Hero() {
       />
       <div className={`container ${styles.inner}`}>
         <div className={styles.text}>
-          <h1 className={styles.title}>
-            Спеціаліст по&nbsp;запускам та&nbsp;масштабуванню
-          </h1>
-          <p className={styles.name}>Анастасія Коваль</p>
+          <h1 className={styles.title}>{tx.title}</h1>
+          <p className={styles.name}>{tx.name}</p>
           <ul className={styles.creds}>
-            <li>Авторка 15+ курсів</li>
-            <li>Консультант малого бізнесу</li>
-            <li>Засновниця та CEO школи іноземних мов Eagles</li>
+            {tx.creds.map(c => <li key={c}>{c}</li>)}
           </ul>
           <div className={styles.actions}>
-            <a href="#packages" className={styles.btnPrimary}>Переглянути пакети</a>
-            <a href="#contact" className={styles.btnSecondary}>Зв&apos;язатись</a>
+            <a href="#packages" className={styles.btnPrimary}>{tx.btnPrimary}</a>
+            <a href="#contact" className={styles.btnSecondary}>{tx.btnSecondary}</a>
           </div>
         </div>
         <div className={styles.imgWrap}>

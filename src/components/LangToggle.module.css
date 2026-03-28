@@ -1,0 +1,27 @@
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-3);
+  transition: border-color 0.2s;
+}
+
+.toggle:hover {
+  border-color: var(--accent);
+}
+
+.active {
+  color: var(--accent);
+}
+
+.sep {
+  opacity: 0.3;
+}

@@ -1,4 +1,5 @@
 import './App.css'
+import { LangProvider } from './LangContext'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Packages from './components/Packages'
@@ -11,7 +12,7 @@ import Nav from './components/Nav'
 
 function App() {
   return (
-    <>
+    <LangProvider>
       <Nav />
       <main>
         <Hero />
@@ -23,7 +24,7 @@ function App() {
         <Cases />
         <Contact />
       </main>
-    </>
+    </LangProvider>
   )
 }
 

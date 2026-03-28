@@ -1,54 +1,23 @@
 import styles from './Packages.module.css'
+import { useLang } from '../LangContext'
+import { t } from '../i18n'
 
-const rows = [
-  'Тест ідеї',
-  'Розробка курсу',
-  'Підготовка до запуску',
-  'Реклама',
-  'Лендінг',
-  'Підтримка після запуску',
+const includes = [
+  [true, true, false, false, false, false],
+  [true, true, true, 'choose', 'choose', true],
+  [true, true, true, true, true, true],
 ]
 
-const packages = [
-  {
-    name: 'База',
-    desc: 'Для експертів, які хочуть зробити зі мною сам продукт, а за його упаковку та просування буде відповідати команда.',
-    includes: [true, true, false, false, false, false],
-    highlight: false,
-  },
-  {
-    name: 'Апгрейд',
-    desc: 'Для експертів, які хочуть зробити зі мною сам продукт та лендінг АБО таргетовану рекламу.',
-    includes: [true, true, true, 'choose', 'choose', true],
-    highlight: false,
-    note: 'Реклама АБО Лендінг — на вибір',
-  },
-  {
-    name: 'Pro',
-    desc: 'Для експертів, які хочуть зробити зі мною сам продукт, лендінг ТА таргетовану рекламу.',
-    includes: [true, true, true, true, true, true],
-    highlight: true,
-    badge: 'best value',
-  },
-]
-
-function CheckIcon({ val }) {
-  if (val === true) {
-    return (
-      <span className={`${styles.ico} ${styles.yes}`}>✓</span>
-    )
-  }
-  if (val === 'choose') {
-    return (
-      <span className={`${styles.ico} ${styles.choose}`}>✓</span>
-    )
-  }
-  return (
-    <span className={`${styles.ico} ${styles.no}`}>✕</span>
-  )
+function CheckIcon({ val, styles }) {
+  if (val === true) return <span className={`${styles.ico} ${styles.yes}`}>✓</span>
+  if (val === 'choose') return <span className={`${styles.ico} ${styles.choose}`}>✓</span>
+  return <span className={`${styles.ico} ${styles.no}`}>✕</span>
 }
 
 export default function Packages() {
+  const { lang } = useLang()
+  const tx = t[lang].packages
+
   return (
     <section id="packages" className="section">
       <div
@@ -60,7 +29,7 @@ export default function Packages() {
         }}
       />
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <h2 className="section-title">Пакети послуг</h2>
+        <h2 className="section-title">{tx.title}</h2>
 
         {/* Desktop table */}
         <div className={styles.tableWrap}>
@@ -68,9 +37,9 @@ export default function Packages() {
             <thead>
               <tr>
                 <th></th>
-                {packages.map(p => (
+                {tx.items.map((p, i) => (
                   <th key={p.name}>
-                    <div className={`${styles.pkgHead} ${p.highlight ? styles.highlight : ''}`}>
+                    <div className={`${styles.pkgHead} ${i === 2 ? styles.highlight : ''}`}>
                       {p.badge && <span className={styles.badge}>{p.badge}</span>}
                       <span className={styles.pkgName}>{p.name}</span>
                     </div>
@@ -79,39 +48,38 @@ export default function Packages() {
               </tr>
             </thead>
             <tbody>
-              {rows.map((row, i) => (
+              {tx.rows.map((row, i) => (
                 <tr key={row}>
                   <td className={styles.rowLabel}>{row}</td>
-                  {packages.map(p => (
-                    <td key={p.name} className={`${styles.cell} ${p.highlight ? styles.highlightCell : ''}`}>
-                      <CheckIcon val={p.includes[i]} />
+                  {tx.items.map((p, pi) => (
+                    <td key={p.name} className={`${styles.cell} ${pi === 2 ? styles.highlightCell : ''}`}>
+                      <CheckIcon val={includes[pi][i]} styles={styles} />
                     </td>
                   ))}
                 </tr>
               ))}
             </tbody>
           </table>
-          {/* Choose note */}
-          <p className={styles.chooseNote}>* В пакеті Апгрейд: Реклама АБО Лендінг — на вибір</p>
+          <p className={styles.chooseNote}>{tx.chooseNote}</p>
         </div>
 
         {/* Cards */}
         <div className={styles.cards}>
-          {packages.map(p => (
-            <div key={p.name} className={`card ${styles.pkgCard} ${p.highlight ? styles.pkgHighlight : ''}`}>
+          {tx.items.map((p, pi) => (
+            <div key={p.name} className={`card ${styles.pkgCard} ${pi === 2 ? styles.pkgHighlight : ''}`}>
               <div className={styles.pkgCardHead}>
                 {p.badge && <span className={styles.badge}>{p.badge}</span>}
                 <span className={styles.tag2}>{p.name}</span>
               </div>
               <p className={styles.pkgDesc}>{p.desc}</p>
               <ul className="check-list">
-                {rows.map((row, i) => (
+                {tx.rows.map((row, i) => (
                   <li key={row}>
-                    <span className={`ico ${p.includes[i] ? 'yes' : 'no'}`}>
-                      {p.includes[i] ? '✓' : '✕'}
+                    <span className={`ico ${includes[pi][i] ? 'yes' : 'no'}`}>
+                      {includes[pi][i] ? '✓' : '✕'}
                     </span>
                     {row}
-                    {p.includes[i] === 'choose' && <span className={styles.optTag}> (на вибір)</span>}
+                    {includes[pi][i] === 'choose' && <span className={styles.optTag}> {tx.chooseLabel}</span>}
                   </li>
                 ))}
               </ul>

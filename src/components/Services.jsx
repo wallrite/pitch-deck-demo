@@ -1,24 +1,11 @@
 import styles from './Services.module.css'
-
-const services = [
-  {
-    tag: 'Business development',
-    items: ['Масштабування', 'Налаштування операційки', 'Просування'],
-    icon: '📈',
-  },
-  {
-    tag: 'Маркетинг',
-    items: ['Запуск таргетованої реклами', 'Лендінг під ключ', 'Автоворонки'],
-    icon: '🎯',
-  },
-  {
-    tag: 'Запуск навчальних курсів',
-    items: ['Розпаковка експертності', 'Створення продуктової лінійки', 'Запуск курсу під ключ'],
-    icon: '🚀',
-  },
-]
+import { useLang } from '../LangContext'
+import { t } from '../i18n'
 
 export default function Services() {
+  const { lang } = useLang()
+  const tx = t[lang].services
+
   return (
     <section id="services" className="section">
       <div
@@ -31,9 +18,9 @@ export default function Services() {
         }}
       />
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <h2 className="section-title">Формати співпраці зі мною</h2>
+        <h2 className="section-title">{tx.title}</h2>
         <div className={styles.grid}>
-          {services.map(s => (
+          {tx.items.map(s => (
             <div key={s.tag} className={`card ${styles.card}`}>
               <div className={styles.cardHeader}>
                 <span className="tag arrow">{s.tag}</span>

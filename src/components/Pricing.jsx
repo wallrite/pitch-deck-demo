@@ -1,61 +1,18 @@
 import styles from './Pricing.module.css'
+import { useLang } from '../LangContext'
+import { t } from '../i18n'
 
-const features = [
-  'Тест ідеї',
-  'Розробка курсу',
-  'Підготовка до запуску',
-  'Реклама',
-  'Лендінг',
-  'Підтримка після запуску',
+const pkgIncludes = [
+  [true, true, false, false, false, false],
+  [true, true, true, 'opt', 'opt', true],
+  [true, true, true, true, true, true],
 ]
-
-const packages = [
-  {
-    name: 'База',
-    mini: '400$',
-    flagship: '800$',
-    includes: [true, true, false, false, false, false],
-    highlight: false,
-  },
-  {
-    name: 'Апгрейд',
-    mini: '600$',
-    flagship: '1200$',
-    includes: [true, true, true, 'opt', 'opt', true],
-    highlight: false,
-    note: 'Реклама АБО Лендінг — на вибір',
-  },
-  {
-    name: 'Pro',
-    mini: '800$',
-    flagship: '1400$',
-    includes: [true, true, true, true, true, true],
-    highlight: true,
-    badge: 'best value',
-    promo: 'Знижка 50% на міні-курс при оплаті пакету міні + флагман',
-  },
-]
-
-const addons = [
-  { name: 'Консультація', price: '100$' },
-  { name: 'Тест ідеї', price: '150$' },
-  { name: 'Консультація + таргет', price: '250$' },
-  { name: 'Лендінг під ключ', price: '250$' },
-  { name: 'Вебінар під ключ', price: '300$' },
-  { name: 'Автоматизація оплат', price: 'від 20$' },
-]
-
-function CheckIcon({ val }) {
-  if (val === true) {
-    return <span className={`${styles.ico} ${styles.yes}`}>✓</span>
-  }
-  if (val === 'opt') {
-    return <span className={`${styles.ico} ${styles.opt}`}>✓</span>
-  }
-  return <span className={`${styles.ico} ${styles.no}`}>✕</span>
-}
 
 export default function Pricing() {
+  const { lang } = useLang()
+  const tx = t[lang].pricing
+  const pkgRows = t[lang].packages.rows
+
   return (
     <section id="pricing" className="section">
       <div
@@ -67,13 +24,13 @@ export default function Pricing() {
         }}
       />
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <h2 className="section-title">Прайс</h2>
+        <h2 className="section-title">{tx.title}</h2>
 
         <div className={styles.grid}>
-          {packages.map(p => (
+          {tx.packages.map((p, pi) => (
             <div
               key={p.name}
-              className={`card ${styles.pkgCard} ${p.highlight ? styles.highlight : ''}`}
+              className={`card ${styles.pkgCard} ${pi === 2 ? styles.highlight : ''}`}
             >
               <div className={styles.header}>
                 <span className={`tag ${styles.tagEl}`}>{p.name}</span>
@@ -81,14 +38,14 @@ export default function Pricing() {
               </div>
 
               <ul className="check-list" style={{ marginBottom: 20 }}>
-                {features.map((f, i) => (
+                {pkgRows.map((f, i) => (
                   <li key={f}>
-                    <span className={`ico ${p.includes[i] === true || p.includes[i] === 'opt' ? 'yes' : 'no'}`}>
-                      {p.includes[i] === true || p.includes[i] === 'opt' ? '✓' : '✕'}
+                    <span className={`ico ${pkgIncludes[pi][i] === true || pkgIncludes[pi][i] === 'opt' ? 'yes' : 'no'}`}>
+                      {pkgIncludes[pi][i] === true || pkgIncludes[pi][i] === 'opt' ? '✓' : '✕'}
                     </span>
                     {f}
-                    {p.includes[i] === 'opt' && (
-                      <span className={styles.optNote}> (на вибір)</span>
+                    {pkgIncludes[pi][i] === 'opt' && (
+                      <span className={styles.optNote}> {tx.optNote}</span>
                     )}
                   </li>
                 ))}
@@ -97,31 +54,28 @@ export default function Pricing() {
               <div className={styles.prices}>
                 <div className={styles.priceItem}>
                   <span className={styles.priceVal}>{p.mini}</span>
-                  <span className={styles.priceLabel}>міні-курс</span>
+                  <span className={styles.priceLabel}>{tx.labelMini}</span>
                 </div>
                 <div className={styles.priceDivider} />
                 <div className={styles.priceItem}>
                   <span className={styles.priceVal}>{p.flagship}</span>
-                  <span className={styles.priceLabel}>флагман</span>
+                  <span className={styles.priceLabel}>{tx.labelFlagship}</span>
                 </div>
               </div>
 
               {p.promo && (
-                <p className={styles.promo}>{p.promo}</p>
+                <p className={styles.promo}>{tx.promo}</p>
               )}
             </div>
           ))}
         </div>
 
-        <p className={styles.formatNote}>
-          Міні-курс — до 8 уроків &nbsp;·&nbsp; Флагман — від 9 до 20 уроків &nbsp;·&nbsp; Інші формати обговорюються індивідуально
-        </p>
+        <p className={styles.formatNote}>{tx.formatNote}</p>
 
-        {/* Addons */}
         <div className={styles.addons}>
-          <h3 className={styles.addonsTitle}>Додаткові послуги</h3>
+          <h3 className={styles.addonsTitle}>{tx.addonsTitle}</h3>
           <div className={styles.addonsGrid}>
-            {addons.map(a => (
+            {tx.addons.map(a => (
               <div key={a.name} className={`card ${styles.addonCard}`}>
                 <span className={styles.addonName}>{a.name}</span>
                 <span className={styles.addonPrice}>{a.price}</span>
@@ -130,22 +84,15 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* Urgent rates */}
         <div className={`card ${styles.urgentCard}`}>
-          <h3 className={styles.urgentTitle}>Термінові тарифи</h3>
+          <h3 className={styles.urgentTitle}>{tx.urgentTitle}</h3>
           <div className={styles.urgentList}>
-            <div className={styles.urgentItem}>
-              <span>Виконання за 7 днів</span>
-              <span className={styles.urgentPrice}>+30%</span>
-            </div>
-            <div className={styles.urgentItem}>
-              <span>Виконання за 3 дні</span>
-              <span className={styles.urgentPrice}>+50%</span>
-            </div>
-            <div className={styles.urgentItem}>
-              <span>На завтра</span>
-              <span className={styles.urgentPrice}>+100%</span>
-            </div>
+            {tx.urgentItems.map(item => (
+              <div key={item.label} className={styles.urgentItem}>
+                <span>{item.label}</span>
+                <span className={styles.urgentPrice}>{item.price}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
