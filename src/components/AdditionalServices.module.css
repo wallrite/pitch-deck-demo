@@ -62,9 +62,10 @@
 
 .list li::before {
   content: '•';
-  color: var(--pink);
+  color: var(--accent);
   flex-shrink: 0;
   line-height: 1.5;
+  opacity: 0.6;
 }
 
 .urgentBox {

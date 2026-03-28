@@ -55,7 +55,7 @@ export default function Packages() {
         className="blob"
         style={{
           width: 400, height: 400,
-          background: 'rgba(120,50,200,0.2)',
+          background: 'rgba(99,102,241,0.14)',
           bottom: -100, left: -100,
         }}
       />

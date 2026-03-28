@@ -55,10 +55,10 @@
 
 .creds li::before {
   content: '';
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background: var(--pink);
+  background: var(--accent);
   flex-shrink: 0;
 }
 
@@ -69,14 +69,15 @@
 }
 
 .btnPrimary {
-  background: var(--pink);
-  color: #4a1020;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  color: #ffffff;
   padding: 14px 32px;
-  border-radius: 30px;
-  font-weight: 700;
+  border-radius: 8px;
+  font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
   transition: opacity 0.2s, transform 0.2s;
+  letter-spacing: 0.01em;
 }
 
 .btnPrimary:hover {
@@ -87,19 +88,19 @@
 
 .btnSecondary {
   background: transparent;
-  color: white;
+  color: rgba(255,255,255,0.75);
   padding: 13px 32px;
-  border-radius: 30px;
-  font-weight: 600;
+  border-radius: 8px;
+  font-weight: 500;
   font-size: 0.95rem;
   text-decoration: none;
-  border: 1.5px solid rgba(255,255,255,0.25);
-  transition: border-color 0.2s, transform 0.2s;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
 }
 
 .btnSecondary:hover {
-  border-color: var(--pink);
-  color: var(--pink);
+  border-color: var(--accent);
+  color: var(--accent);
   transform: translateY(-1px);
   text-decoration: none;
 }
@@ -114,7 +115,7 @@
 .imgGlow {
   position: absolute;
   inset: -30px;
-  background: radial-gradient(circle, rgba(180,60,120,0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(99,102,241,0.3) 0%, transparent 70%);
   border-radius: 50%;
 }
 
@@ -122,8 +123,8 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: linear-gradient(145deg, rgba(244,167,185,0.15), rgba(120,50,200,0.15));
-  border: 2px solid rgba(244,167,185,0.2);
+  background: linear-gradient(145deg, rgba(129,140,248,0.1), rgba(99,102,241,0.08));
+  border: 1px solid rgba(129,140,248,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,7 +135,7 @@
 .initials {
   font-size: 5rem;
   font-weight: 700;
-  color: rgba(244,167,185,0.6);
+  color: rgba(129,140,248,0.5);
   letter-spacing: -0.03em;
 }
 

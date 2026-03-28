@@ -22,25 +22,21 @@
 .tag {
   display: inline-flex;
   align-items: center;
-  background: var(--pink);
-  color: #4a1020;
-  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  color: var(--accent-text);
+  font-weight: 600;
   font-size: 0.875rem;
   padding: 5px 14px;
-  border-radius: 20px;
+  border-radius: 8px;
   margin-bottom: 14px;
   white-space: nowrap;
 }
 
 .tag.arrow::after {
-  content: '';
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  border-left: 8px solid var(--pink);
-  margin-left: 10px;
+  content: '→';
+  margin-left: 8px;
+  font-size: 0.8rem;
+  opacity: 0.7;
 }
 
 .card {
@@ -81,8 +77,8 @@
 }
 
 .check-list li .ico.yes {
-  background: rgba(244,167,185,0.2);
-  color: var(--pink);
+  background: rgba(129,140,248,0.18);
+  color: var(--accent);
 }
 
 .check-list li .ico.no {
@@ -100,7 +96,7 @@
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: rgba(244,167,185,0.25); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: rgba(129,140,248,0.25); border-radius: 3px; }
 
 @media (max-width: 768px) {
   .section { padding: 60px 0; }

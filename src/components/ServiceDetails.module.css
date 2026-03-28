@@ -11,10 +11,11 @@
 .card:hover { transform: translateY(-3px); }
 
 .cardTitle {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 600;
   margin-bottom: 16px;
-  color: var(--pink);
+  color: var(--accent);
+  letter-spacing: 0.01em;
 }
 
 .list {
@@ -36,12 +37,13 @@
 }
 
 .dot {
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
-  background: var(--pink);
+  background: var(--accent);
   flex-shrink: 0;
-  margin-top: 7px;
+  margin-top: 8px;
+  opacity: 0.7;
 }
 
 @media (max-width: 900px) {

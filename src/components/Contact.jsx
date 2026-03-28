@@ -7,7 +7,7 @@ export default function Contact() {
         className="blob"
         style={{
           width: 500, height: 500,
-          background: 'rgba(120,50,200,0.2)',
+          background: 'rgba(99,102,241,0.13)',
           top: '50%', left: '50%',
           transform: 'translate(-50%,-50%)',
         }}

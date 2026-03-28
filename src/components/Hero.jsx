@@ -6,17 +6,17 @@ export default function Hero() {
       <div
         className="blob"
         style={{
-          width: 400, height: 400,
-          background: 'rgba(120,50,200,0.35)',
-          top: -100, left: -80,
+          width: 500, height: 500,
+          background: 'rgba(99,102,241,0.2)',
+          top: -120, left: -120,
         }}
       />
       <div
         className="blob"
         style={{
           width: 300, height: 300,
-          background: 'rgba(180,50,100,0.25)',
-          top: 200, right: -60,
+          background: 'rgba(59,130,246,0.12)',
+          top: 250, right: -60,
         }}
       />
       <div className={`container ${styles.inner}`}>

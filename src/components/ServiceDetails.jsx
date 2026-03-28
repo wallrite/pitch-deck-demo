@@ -72,7 +72,7 @@ export default function ServiceDetails() {
         className="blob"
         style={{
           width: 350, height: 350,
-          background: 'rgba(180,50,120,0.15)',
+          background: 'rgba(59,130,246,0.1)',
           top: '30%', right: -100,
         }}
       />

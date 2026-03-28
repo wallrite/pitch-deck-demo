@@ -13,7 +13,7 @@
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(244,167,185,0.08);
+  box-shadow: 0 12px 40px rgba(129,140,248,0.08);
 }
 
 .cardHeader {
@@ -39,10 +39,10 @@
 }
 
 .dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background: var(--pink);
+  background: var(--accent);
   flex-shrink: 0;
 }
 

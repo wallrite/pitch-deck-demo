@@ -48,10 +48,10 @@
 .links a:hover { color: white; }
 
 .ctaBtn {
-  background: var(--pink) !important;
-  color: #4a1020 !important;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent)) !important;
+  color: #ffffff !important;
   padding: 8px 20px;
-  border-radius: 24px;
+  border-radius: 6px;
   font-weight: 600;
   font-size: 0.875rem !important;
   transition: opacity 0.2s !important;
